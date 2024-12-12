@@ -1,4 +1,5 @@
-'use client'
+"use client";
+
 import { useAnimate, useInView } from "framer-motion";
 import React, { useEffect } from "react";
 import { FiCode, FiDollarSign, FiGift, FiMail } from "react-icons/fi";
@@ -40,7 +41,7 @@ export const Stepper = () => {
         {
           duration: 0.2,
           ease: "linear",
-        }
+        },
       );
       if (i !== STEPS.length - 1) {
         await animate(
@@ -52,7 +53,7 @@ export const Stepper = () => {
             duration: 0.2,
             ease: "linear",
             delay: 0.1,
-          }
+          },
         );
       }
     }

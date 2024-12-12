@@ -63,7 +63,7 @@ export const UserUpdateSchema = z
       message:
         "New password and confirm password are required when old password is provided",
       path: ["newPassword", "confirmPassword"],
-    }
+    },
   )
   .refine((data) => data.newPassword === data.confirmPassword, {
     message: "Passwords do not match",
@@ -79,5 +79,5 @@ export const UserUpdateSchema = z
     {
       message: "New password must be different from the current password",
       path: ["newPassword"],
-    }
+    },
   );

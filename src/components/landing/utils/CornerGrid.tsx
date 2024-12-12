@@ -2,7 +2,7 @@ import React from "react";
 
 export const CornerGrid = () => {
   return (
-    <div className="absolute right-0 top-0 z-0 size-[50vw] bg-grid-blue-900/50">
+    <div className="bg-grid-blue-900/50 absolute right-0 top-0 z-0 size-[50vw]">
       <div
         style={{
           backgroundImage:

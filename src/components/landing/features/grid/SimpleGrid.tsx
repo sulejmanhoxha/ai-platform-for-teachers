@@ -1,4 +1,5 @@
 import React from "react";
+import { IconType } from "react-icons";
 import {
   FiCalendar,
   FiCheck,
@@ -7,7 +8,6 @@ import {
   FiMoon,
   FiWatch,
 } from "react-icons/fi";
-import { IconType } from "react-icons";
 
 export const SimpleGrid = () => (
   <div className="relative z-10 grid grid-cols-2 gap-9 px-3 md:grid-cols-3 md:gap-12 md:px-6">

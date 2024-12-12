@@ -1,6 +1,7 @@
-'use client'
-import React from "react";
+"use client";
+
 import { motion } from "framer-motion";
+import React from "react";
 
 export const GradientGrid = () => {
   return (
@@ -17,7 +18,7 @@ export const GradientGrid = () => {
       }}
       className="absolute inset-0 z-0"
     >
-      <div className="absolute inset-0 z-0 bg-grid-blue-900/50" />
+      <div className="bg-grid-blue-900/50 absolute inset-0 z-0" />
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-zinc-950/0 to-zinc-950" />
     </motion.div>
   );

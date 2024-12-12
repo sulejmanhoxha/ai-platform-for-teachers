@@ -1,8 +1,10 @@
 "use client";
-import { Button } from "@/components/ui/button";
+
+import { toast } from "@/hooks/use-toast";
 
 import { authClient } from "@/lib/auth-client";
-import { toast } from "@/hooks/use-toast";
+
+import { Button } from "@/components/ui/button";
 
 export function SocialSignIn() {
   async function socialSingIn() {
@@ -34,7 +36,7 @@ export function SocialSignIn() {
             description: ctx.error.message,
           });
         },
-      }
+      },
     );
   }
 

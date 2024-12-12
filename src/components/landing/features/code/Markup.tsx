@@ -1,5 +1,5 @@
-import React from "react";
 import { Highlight } from "prism-react-renderer";
+import React from "react";
 
 export const Markup = ({ code, lang }: { code: string; lang: string }) => {
   return (

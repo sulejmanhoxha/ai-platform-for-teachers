@@ -1,5 +1,7 @@
-'use client'
+"use client";
+
 import React from "react";
+
 import { Beam } from "./Beam";
 import { useWindowSize } from "./useWindowSize";
 
