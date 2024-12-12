@@ -1,4 +1,8 @@
+import { headers } from "next/headers";
 import Link from "next/link";
+import { redirect } from "next/navigation";
+
+import { auth } from "@/lib/auth";
 
 import {
   Card,
@@ -12,6 +16,14 @@ import { SignInForm } from "@/components/auth/SignInForm";
 import { SocialSignIn } from "@/components/auth/SocialsForm";
 
 export default async function SignInPage() {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
+  if (session) {
+    redirect("/");
+  }
+
   return (
     <main className="flex min-h-screen items-center justify-center">
       <Card className="mx-auto w-full max-w-sm bg-background text-foreground">

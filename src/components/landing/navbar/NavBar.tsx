@@ -1,11 +1,11 @@
 "use client";
 
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import Link from "next/link";
 import React, { useState } from "react";
 
 import { authClient } from "@/lib/auth-client";
 
+import { UserDropdown } from "@/components/auth/UserDropdown";
 import { MaxWidthWrapper } from "@/components/landing/utils/MaxWidthWrapper";
 import ThemeToggle from "@/components/theme/ThemeToggle";
 
@@ -61,20 +61,9 @@ export const NavBar = () => {
             ) : (
               ""
             )}
-            {error ? (
-              <>
-                <ThemeToggle />
-                <NavCTAs />
-              </>
-            ) : (
-              ""
-            )}
+            {error || !session ? <NavCTAs /> : ""}
 
-            {session ? (
-              <Link href={"/dashboard"}>{session.user.name}</Link>
-            ) : (
-              ""
-            )}
+            {session ? <UserDropdown user={session.user.name} /> : ""}
           </div>
         </div>
         <div className="block pt-1.5 md:hidden">
