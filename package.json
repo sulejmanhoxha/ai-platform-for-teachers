@@ -8,6 +8,7 @@
     "dev:turbo": "next dev --turbopack",
     "dev:turbo:safe": "rm -rf .next && pnpm dev --turbopack",
     "build": "next build",
+    "build:no-lint": "next build --no-lint",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --check .",

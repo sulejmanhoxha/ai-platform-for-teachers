@@ -4,8 +4,6 @@ import { Barlow as Font } from "next/font/google";
 
 import { Toaster } from "@/components/ui/toaster";
 
-import { NavBar } from "@/components/landing/navbar/NavBar";
-
 import "./globals.css";
 
 const font = Font({
@@ -29,10 +27,7 @@ export default function RootLayout({
       <body
         className={`${font.className} bg-zinc-950 text-zinc-200 selection:bg-zinc-600`}
       >
-        <ThemeProvider attribute="class">
-          <NavBar />
-          {children}
-        </ThemeProvider>
+        <ThemeProvider attribute="class">{children}</ThemeProvider>
 
         <Toaster />
       </body>

@@ -7,11 +7,13 @@ import { Stats } from "@/components/landing/features/stats/Stats";
 import { Footer } from "@/components/landing/footer/Footer";
 import { Hero } from "@/components/landing/hero/Hero";
 import { Logos } from "@/components/landing/logos/Logos";
+import { NavBar } from "@/components/landing/navbar/NavBar";
 import { Pricing } from "@/components/landing/pricing/Pricing";
 
 export default function Home() {
   return (
     <main>
+      <NavBar />
       <Hero />
       <Logos />
       <FeatureGrid />
