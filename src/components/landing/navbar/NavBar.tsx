@@ -6,9 +6,9 @@ import React, { useState } from "react";
 
 import { authClient } from "@/lib/auth-client";
 
+import { MaxWidthWrapper } from "@/components/landing/utils/MaxWidthWrapper";
 import ThemeToggle from "@/components/theme/ThemeToggle";
 
-import { MaxWidthWrapper } from "../utils/MaxWidthWrapper";
 import { NavCTAs } from "./NavCTAs";
 import { NavLinks } from "./NavLinks";
 import { NavLogo } from "./NavLogo";
