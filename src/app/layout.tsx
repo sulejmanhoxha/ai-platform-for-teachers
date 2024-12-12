@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
+import { Barlow as Font } from "next/font/google";
+import { Toaster } from "@/components/ui/toaster"
 import "./globals.css";
+import { NavBar } from "@/components/navbar/NavBar";
+import { ThemeProvider } from "next-themes";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Font({
+  subsets: ["latin"],
+  style: ["italic", "normal"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +23,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <body className={inter.className}>{children}</body>
+    <body className={`${font.className} bg-zinc-950 text-zinc-200 selection:bg-zinc-600`}>
+    <ThemeProvider attribute="class">
+            
+      <NavBar/>
+      {children}
+          </ThemeProvider>
+      
+      
+    <Toaster />
+      </body> 
     </html>
   );
 }
