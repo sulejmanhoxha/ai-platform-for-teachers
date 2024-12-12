@@ -15,9 +15,9 @@ export default async function SignUpPage() {
     <main className="flex min-h-screen items-center justify-center">
       <Card className="mx-auto w-full max-w-sm">
         <CardHeader>
-          <CardTitle className="text-2xl">Login</CardTitle>
+          <CardTitle className="text-2xl">Signup</CardTitle>
           <CardDescription>
-            Enter your email below to login to your account
+            Enter the details below to signup to your account
           </CardDescription>
         </CardHeader>
         <CardContent>
