@@ -17,6 +17,7 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 
+import { NavSubjects } from "@/components/sidebar/nav-projects";
 import { NavUser } from "@/components/sidebar/nav-user";
 
 const subjects = [
@@ -60,7 +61,7 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Subjects</SidebarGroupLabel>
+          <SidebarGroupLabel>Your AI Generated</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {categories.map((item) => (
@@ -74,26 +75,7 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
 
-        <SidebarGroup>
-          <SidebarGroupLabel>Subjects</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {subjects.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <Link href={item.url}>{item.title}</Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-
-              <SidebarMenuItem>
-                <SidebarMenuButton variant={"outline"} className="w-fit px-6">
-                  <Link href={"/subjects/new"}>New Subject</Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
+        <NavSubjects subjects={subjects} />
       </SidebarContent>
 
       <SidebarFooter>

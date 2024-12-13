@@ -1,12 +1,13 @@
 "use client";
 
 import {
-  Folder,
-  Forward,
+  Eye,
   type LucideIcon,
   MoreHorizontal,
+  Pencil,
   Trash2,
 } from "lucide-react";
+import Link from "next/link";
 
 import {
   DropdownMenu,
@@ -25,28 +26,24 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 
-export function NavProjects({
-  projects,
+export function NavSubjects({
+  subjects,
 }: {
-  projects: {
-    name: string;
+  subjects: {
+    title: string;
     url: string;
-    icon: LucideIcon;
   }[];
 }) {
   const { isMobile } = useSidebar();
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-      <SidebarGroupLabel>Projects</SidebarGroupLabel>
+      <SidebarGroupLabel>Subjects</SidebarGroupLabel>
       <SidebarMenu>
-        {projects.map((item) => (
-          <SidebarMenuItem key={item.name}>
+        {subjects.map((item) => (
+          <SidebarMenuItem key={item.title}>
             <SidebarMenuButton asChild>
-              <a href={item.url}>
-                <item.icon />
-                <span>{item.name}</span>
-              </a>
+              <Link href={item.url}>{item.title}</Link>
             </SidebarMenuButton>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -61,17 +58,17 @@ export function NavProjects({
                 align={isMobile ? "end" : "start"}
               >
                 <DropdownMenuItem>
-                  <Folder className="text-muted-foreground" />
-                  <span>View Project</span>
+                  <Eye className="text-muted-foreground" />
+                  <span>View Subject</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Forward className="text-muted-foreground" />
-                  <span>Share Project</span>
+                  <Pencil className="text-muted-foreground" />
+                  <span>Edit Subject</span>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
                   <Trash2 className="text-muted-foreground" />
-                  <span>Delete Project</span>
+                  <span>Delete Subject</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -79,8 +76,7 @@ export function NavProjects({
         ))}
         <SidebarMenuItem>
           <SidebarMenuButton className="text-sidebar-foreground/70">
-            <MoreHorizontal className="text-sidebar-foreground/70" />
-            <span>More</span>
+            <span>Create New Subject</span>
           </SidebarMenuButton>
         </SidebarMenuItem>
       </SidebarMenu>
