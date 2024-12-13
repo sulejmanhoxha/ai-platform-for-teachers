@@ -1,14 +1,9 @@
 "use client";
 
-import {
-  Eye,
-  type LucideIcon,
-  MoreHorizontal,
-  Pencil,
-  Trash2,
-} from "lucide-react";
+import { Eye, MoreHorizontal, Pencil, Trash2 } from "lucide-react";
 import Link from "next/link";
 
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -75,9 +70,9 @@ export function NavSubjects({
           </SidebarMenuItem>
         ))}
         <SidebarMenuItem>
-          <SidebarMenuButton className="text-sidebar-foreground/70">
-            <span>Create New Subject</span>
-          </SidebarMenuButton>
+          <Button variant="outline" className="mt-4 w-full">
+            Create New Subject
+          </Button>
         </SidebarMenuItem>
       </SidebarMenu>
     </SidebarGroup>

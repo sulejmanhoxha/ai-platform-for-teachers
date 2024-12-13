@@ -1,23 +1,15 @@
 "use client";
 
-import Link from "next/link";
-
 import { authClient } from "@/lib/auth-client";
 
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
 
-import { NavSubjects } from "@/components/sidebar/nav-projects";
+import { NavSubjects } from "@/components/sidebar/nav-subjects";
 import { NavUser } from "@/components/sidebar/nav-user";
 
 const subjects = [
@@ -35,46 +27,12 @@ const subjects = [
   },
 ];
 
-const categories = [
-  {
-    title: "Quizzes",
-    url: "quizzes",
-  },
-  {
-    title: "Assignments",
-    url: "assignments",
-  },
-  {
-    title: "Lesson Plans",
-    url: "lesson-plans",
-  },
-  {
-    title: "Presentations",
-    url: "presentations",
-  },
-];
-
 export function AppSidebar() {
   const { data: session, isPending, error } = authClient.useSession();
 
   return (
     <Sidebar>
       <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Your AI Generated</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {categories.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <Link href={item.url}>{item.title}</Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-
         <NavSubjects subjects={subjects} />
       </SidebarContent>
 
