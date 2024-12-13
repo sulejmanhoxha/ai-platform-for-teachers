@@ -19,16 +19,20 @@ export function UserDropdown({ user }: { user: string }) {
         <Button variant="outline">{user}</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-        <Link href="/signin">
+        <Link href="/dashboard">
+          <DropdownMenuItem>
+            <LayoutDashboard />
+            <span>Dashboard</span>
+          </DropdownMenuItem>
+        </Link>
+
+        <Link href="/dashboard/profile">
           <DropdownMenuItem>
             <User />
             <span>Profile</span>
           </DropdownMenuItem>
         </Link>
-        <DropdownMenuItem>
-          <LayoutDashboard />
-          <span>Dashboard</span>
-        </DropdownMenuItem>
+
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => authClient.signOut()}>
           <LogOut />
