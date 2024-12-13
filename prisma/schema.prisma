@@ -76,3 +76,15 @@ model Verification {
 
   @@map("verification")
 }
+
+// Content generation (quizzes, assignments, lesson plans, presentations)
+// model Quiz {
+//   id          Int       @id @default(autoincrement())
+//   title       String
+//   content     String
+//   createdAt   DateTime  @default(now())
+//   updatedAt   DateTime  @updatedAt
+//   createdBy   String
+//   user        User      @relation(fields: [createdBy], references: [id], onDelete: Cascade)
+//   isPublished Boolean   @default(false)
+// }

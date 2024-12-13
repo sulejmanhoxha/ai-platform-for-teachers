@@ -93,19 +93,19 @@ export default function SubjectDetailsPage({
     },
   ];
   return (
-    <Tabs defaultValue="account" className="w-[400px]">
-      <TabsList className="grid w-full grid-cols-2">
+    <Tabs defaultValue="account" className="min-h-full w-full">
+      <TabsList className="grid h-fit w-full grid-cols-2 gap-2 sm:grid-cols-4">
         <TabsTrigger value="quizzes">Quizzes</TabsTrigger>
         <TabsTrigger value="presentations">Presentations</TabsTrigger>
         <TabsTrigger value="assignments">Assignments</TabsTrigger>
         <TabsTrigger value="lesson-plans">Lesson Plans</TabsTrigger>
       </TabsList>
-      <TabsContent value="quizzes">
+      <TabsContent value="quizzes" className="px-4">
         <Table>
           <TableCaption>A list of your recent quizzes.</TableCaption>
           <TableHeader>
             <TableRow>
-              <TableHead className="w-[100px]">Title</TableHead>
+              <TableHead>Title</TableHead>
               <TableHead>Description</TableHead>
             </TableRow>
           </TableHeader>
@@ -117,12 +117,6 @@ export default function SubjectDetailsPage({
               </TableRow>
             ))}
           </TableBody>
-          <TableFooter>
-            <TableRow>
-              <TableCell colSpan={3}>Total</TableCell>
-              <TableCell className="text-right">$2,500.00</TableCell>
-            </TableRow>
-          </TableFooter>
         </Table>
       </TabsContent>
     </Tabs>
