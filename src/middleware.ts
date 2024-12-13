@@ -17,8 +17,6 @@ export default async function authMiddleware(request: NextRequest) {
 
   const { pathname } = request.nextUrl;
 
-  console.log(session);
-
   // Protect '/dashboard' from unauthenticated users
   if (pathname.startsWith("/dashboard") && !session) {
     return NextResponse.redirect(new URL("/signin", request.url));
