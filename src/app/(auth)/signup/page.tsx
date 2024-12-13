@@ -1,8 +1,4 @@
-import { headers } from "next/headers";
 import Link from "next/link";
-import { redirect } from "next/navigation";
-
-import { auth } from "@/lib/auth";
 
 import {
   Card,
@@ -15,13 +11,6 @@ import {
 import { SignUpForm } from "@/components/auth/SignUpForm";
 
 export default async function SignUpPage() {
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
-
-  if (session) {
-    redirect("/");
-  }
   return (
     <main className="flex min-h-screen items-center justify-center">
       <Card className="mx-auto w-full max-w-sm">
