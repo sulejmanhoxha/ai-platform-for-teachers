@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${font.className} bg-zinc-950 text-zinc-200 selection:bg-zinc-600`}
+        className={`${font.className} bg-background text-foreground selection:bg-zinc-600`}
       >
         <ThemeProvider attribute="class">{children}</ThemeProvider>
 
