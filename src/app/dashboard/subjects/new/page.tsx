@@ -52,7 +52,7 @@ export default function NewSubjectPage() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="mx-auto max-w-sm space-y-8 py-10"
+        className="mx-auto max-w-sm space-y-8 px-4 py-10"
       >
         <FormField
           control={form.control}

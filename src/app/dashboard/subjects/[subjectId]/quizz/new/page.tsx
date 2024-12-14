@@ -26,7 +26,7 @@ const formSchema = z.object({
   chapter: z.string().min(1).max(100).optional(),
 });
 
-export default function MyForm() {
+export default function QuizzCreatePage() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
@@ -55,7 +55,7 @@ export default function MyForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="mx-auto max-w-sm space-y-8 py-10"
+        className="mx-auto max-w-sm space-y-8 px-4 py-10"
       >
         <FormField
           control={form.control}
