@@ -10,12 +10,12 @@ import {
 } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export default function SubjectDetailsPage({
+export default async function SubjectDetailsPage({
   params,
 }: {
-  params: { subjectId: string };
+  params: Promise<{ subjectId: string }>;
 }) {
-  const subjectId = params.subjectId;
+  const subjectId = (await params).subjectId;
 
   const quizzes = [
     {
