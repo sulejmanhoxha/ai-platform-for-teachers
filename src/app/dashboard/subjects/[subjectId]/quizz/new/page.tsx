@@ -98,7 +98,7 @@ export default function QuizzCreatePage() {
           name="difficulty"
           render={({ field: { value, onChange } }) => (
             <FormItem>
-              <FormLabel>Price - {value}</FormLabel>
+              <FormLabel>Difficulty - {value}</FormLabel>
               <FormControl>
                 <Slider
                   min={1}
@@ -111,7 +111,8 @@ export default function QuizzCreatePage() {
                 />
               </FormControl>
               <FormDescription>
-                Adjust the difficulty of the quizz.
+                Adjust the difficulty of the quizz, from easy to hard. Minimun
+                value is 1, maximum values is 5.
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -122,7 +123,7 @@ export default function QuizzCreatePage() {
           name="number_of_questions"
           render={({ field: { value, onChange } }) => (
             <FormItem>
-              <FormLabel>Price - {value}</FormLabel>
+              <FormLabel>Number of questions - {value}</FormLabel>
               <FormControl>
                 <Slider
                   min={3}
@@ -135,7 +136,8 @@ export default function QuizzCreatePage() {
                 />
               </FormControl>
               <FormDescription>
-                Adjust the number of questions by sliding.
+                Adjust the number of questions by sliding. Minimun value is 3,
+                maximum values is 7.
               </FormDescription>
               <FormMessage />
             </FormItem>
