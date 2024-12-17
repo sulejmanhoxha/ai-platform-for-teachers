@@ -5,6 +5,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
+import { generateQuizzAction } from "@/lib/ai-content/quizz";
+
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -18,6 +20,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 
+import { useAIContext } from "@/components/AIContext";
+
 const formSchema = z.object({
   title: z.string().min(1).max(100),
   description: z.string().min(1).max(300).optional(),
@@ -26,14 +30,19 @@ const formSchema = z.object({
   chapter: z.string().min(1).max(100).optional(),
 });
 
+export type TQuizzForm = z.infer<typeof formSchema>;
+
 export default function QuizzCreatePage() {
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<TQuizzForm>({
     resolver: zodResolver(formSchema),
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  const { setGeneratedText, setGenerating } = useAIContext();
+
+  async function onSubmit(values: TQuizzForm) {
     try {
-      console.log(values);
+      setGenerating(true);
+
       toast({
         description: (
           <pre className="mt-2 w-[340px] rounded-md p-4">
@@ -43,6 +52,11 @@ export default function QuizzCreatePage() {
           </pre>
         ),
       });
+
+      const text = await generateQuizzAction(values);
+
+      setGeneratedText(text);
+      setGenerating(false);
     } catch (error) {
       toast({
         title: "Failed to submit the form. Please try again.",
@@ -162,7 +176,9 @@ export default function QuizzCreatePage() {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button disabled={form.formState.isSubmitting} type="submit">
+          {form.formState.isSubmitting ? "Loading..." : "Submit"}
+        </Button>
       </form>
     </Form>
   );
