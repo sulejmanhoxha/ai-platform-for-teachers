@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import React, { useState } from "react";
 
 import { authClient } from "@/lib/auth-client";

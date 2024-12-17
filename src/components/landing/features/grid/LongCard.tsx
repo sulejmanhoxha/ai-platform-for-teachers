@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimationProps, motion } from "framer-motion";
+import { AnimationProps, motion } from "motion/react";
 import React, { useEffect, useState } from "react";
 import {
   SiAuth0,

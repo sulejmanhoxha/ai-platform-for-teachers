@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { FiLink } from "react-icons/fi";
 
 import { BubbleButton } from "@/components/landing/buttons/BubbleButton";

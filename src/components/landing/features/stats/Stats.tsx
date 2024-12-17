@@ -1,6 +1,6 @@
 "use client";
 
-import { animate, useInView } from "framer-motion";
+import { animate, useInView } from "motion/react";
 import React, { useEffect, useRef } from "react";
 
 import { CornerBlur } from "@/components/landing/utils/CornerBlur";

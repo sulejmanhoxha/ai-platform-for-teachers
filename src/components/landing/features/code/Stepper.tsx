@@ -1,6 +1,6 @@
 "use client";
 
-import { useAnimate, useInView } from "framer-motion";
+import { useAnimate, useInView } from "motion/react";
 import React, { useEffect } from "react";
 import { FiCode, FiDollarSign, FiGift, FiMail } from "react-icons/fi";
 
